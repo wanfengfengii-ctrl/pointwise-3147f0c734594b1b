@@ -1,0 +1,20 @@
+{
+  "capture": "三个独立Python进程；只读环境中将下列原样源码作为内存模块装载，数据文件读取映射到所提供内容；argv记录等价业务入口。stdout为业务标准输出，未混入解释器启动器stderr。",
+  "runs": [
+    {
+      "argv": ["python3", "checks.py", "normal"],
+      "exit_code": 0,
+      "stdout": "NORMAL_REGRESSION_OK\n"
+    },
+    {
+      "argv": ["python3", "checks.py", "incident"],
+      "exit_code": 1,
+      "stdout": "TEMPORAL_LINEAGE_DRIFT\n[{\"expected_rows\": 10, \"expected_totals\": {\"east\": 120, \"north\": 300}, \"observed_rows\": 10, \"observed_totals\": {\"east\": 120, \"north\": 300}, \"step\": 1}, {\"expected_rows\": 1, \"expected_totals\": {\"north\": 300}, \"observed_rows\": 10, \"observed_totals\": {\"east\": 60, \"north\": 300}, \"step\": 2}, {\"expected_rows\": 1, \"expected_totals\": {\"north\": 300}, \"observed_rows\": 12, \"observed_totals\": {\"east\": 60, \"north\": 300, \"south\": 140}, \"step\": 3}, {\"expected_rows\": 1, \"expected_totals\": {\"north\": 300}, \"observed_rows\": 12, \"observed_totals\": {\"east\": 60, \"north\": 160, \"south\": 105}, \"step\": 4}, {\"expected_rows\": 1, \"expected_totals\": {\"north\": 300}, \"observed_rows\": 12, \"observed_totals\": {\"east\": 60, \"north\": 300, \"south\": 0}, \"step\": 5}]\n"
+    },
+    {
+      "argv": ["python3", "checks.py", "incident"],
+      "exit_code": 1,
+      "stdout": "TEMPORAL_LINEAGE_DRIFT\n[{\"expected_rows\": 10, \"expected_totals\": {\"east\": 120, \"north\": 300}, \"observed_rows\": 10, \"observed_totals\": {\"east\": 120, \"north\": 300}, \"step\": 1}, {\"expected_rows\": 1, \"expected_totals\": {\"north\": 300}, \"observed_rows\": 10, \"observed_totals\": {\"east\": 60, \"north\": 300}, \"step\": 2}, {\"expected_rows\": 1, \"expected_totals\": {\"north\": 300}, \"observed_rows\": 12, \"observed_totals\": {\"east\": 60, \"north\": 300, \"south\": 140}, \"step\": 3}, {\"expected_rows\": 1, \"expected_totals\": {\"north\": 300}, \"observed_rows\": 12, \"observed_totals\": {\"east\": 60, \"north\": 160, \"south\": 105}, \"step\": 4}, {\"expected_rows\": 1, \"expected_totals\": {\"north\": 300}, \"observed_rows\": 12, \"observed_totals\": {\"east\": 60, \"north\": 300, \"south\": 0}, \"step\": 5}]\n"
+    }
+  ]
+}
